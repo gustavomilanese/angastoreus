@@ -1,0 +1,10 @@
+.estilo-carrito{
+    color: rgb(220, 219, 219);
+    padding-right: 30px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+
+.carrito-container{
+    display: flex;
+}
