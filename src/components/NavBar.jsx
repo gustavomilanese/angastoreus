@@ -2,13 +2,15 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
     <>
       <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">Anga Store</Navbar.Brand>
+          <Navbar.Brand>Anga Store</Navbar.Brand>
+
           <Nav className="me-auto">
             <Nav.Link href="#CategoryA">Category A</Nav.Link>
             <Nav.Link href="#CategoryB">Category B</Nav.Link>
@@ -22,3 +24,5 @@ function NavBar() {
 }
 
 export default NavBar;
+
+
