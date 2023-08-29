@@ -8,3 +8,34 @@
 .carrito-container{
     display: flex;
 }
+
+.row {
+    justify-content: center;
+}
+
+.card {
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3); 
+    background-color: rgb(255, 255, 255);  
+    margin: 10px;
+}
+
+.imagen {
+    height: 70%;
+}
+
+.cardsize{
+    width: 45%;
+}
+
+.itemcontador{
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.noUnderline {
+    text-decoration: none;
+}
+
+.addcarrito{
+    margin-left: 20px;
+}
