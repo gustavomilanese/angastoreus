@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
 
         getProductos
             .then((res) => {
-                const productoEncontrado = res.find(prod => prod.id === parseInt(id));
+                const productoEncontrado = res.filter(prod => prod.id === parseInt(id));
                 setProducto(productoEncontrado);
             })
             .catch((error) => {

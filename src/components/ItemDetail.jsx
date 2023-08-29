@@ -10,21 +10,22 @@ const ItemDetail = ({ producto }) => {
         return <p>Loading</p>;
     }
 
-    const { id, title, description, price, stock, imagen, category } = producto;
-
     return (
-        <Card style={{ width: '24rem', margin: 'auto', marginTop: '20px' }}>
-            <Card.Img variant="top" src={imagen} />
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>{description}</Card.Text>
-                <Card.Text>price: ${price}</Card.Text>
-                <Card.Text>available: {stock}</Card.Text>
-                {/* <Card.Text>Categoría: {category}</Card.Text> */}
-            </Card.Body>
-            <ItemCount stock={stock}/>
-        </Card>
-    );
+        producto.map((p) => (
+            <Card style={{ width: '24rem', margin: 'auto', marginTop: '20px' }}>
+                <Card.Img variant="top" src={p.imagen} />
+                <Card.Body>
+                    <Card.Title>{p.title}</Card.Title>
+                    <Card.Text>{p.description}</Card.Text>
+                    <Card.Text>price: ${p.price}</Card.Text>
+                    <Card.Text>available: {p.stock}</Card.Text>
+                    {/* <Card.Text>Categoría: {category}</Card.Text> */}
+                </Card.Body>
+                <ItemCount stock={p.stock}/>
+            </Card>
+        )
+    )
+    )
 }
 
 export default ItemDetail;
