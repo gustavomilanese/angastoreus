@@ -10,22 +10,23 @@ const ItemDetail = ({ producto }) => {
         return <p>Loading</p>;
     }
 
+    console.log(producto)
+    console.log(producto.id)
+
     return (
-        producto.map((p) => (
+        <>
             <Card style={{ width: '24rem', margin: 'auto', marginTop: '20px' }}>
-                <Card.Img variant="top" src={p.imagen} />
+                <Card.Img className="imagensize" variant="top" src={producto.imagen} />
                 <Card.Body>
-                    <Card.Title>{p.title}</Card.Title>
-                    <Card.Text>{p.description}</Card.Text>
-                    <Card.Text>price: ${p.price}</Card.Text>
-                    <Card.Text>available: {p.stock}</Card.Text>
-                    {/* <Card.Text>Categoría: {category}</Card.Text> */}
+                    <Card.Title>{producto.title}</Card.Title>
+                    <Card.Text>{producto.description}</Card.Text>
+                    <Card.Text>price: ${producto.price}</Card.Text>
+                    <Card.Text>available: {producto.stock}</Card.Text>
                 </Card.Body>
-                <ItemCount stock={p.stock}/>
+                <ItemCount producto={producto}/>
             </Card>
-        )
-    )
-    )
+        </>
+    );
 }
 
-export default ItemDetail;
+export default React.memo(ItemDetail);

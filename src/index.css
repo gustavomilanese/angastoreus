@@ -1,5 +1,5 @@
 .estilo-carrito{
-    color: rgb(220, 219, 219);
+    color: rgb(255, 255, 255);
     padding-right: 30px;
     padding-top: 20px;
     font-size: 20px;
@@ -13,18 +13,12 @@
     justify-content: center;
 }
 
-.card {
-    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.3); 
-    background-color: rgb(255, 255, 255);  
-    margin: 10px;
+.image-size {
+    width: 25%;
 }
 
-.imagen {
-    height: 70%;
-}
-
-.cardsize{
-    width: 45%;
+.imagensize{
+    max-width: 240px;
 }
 
 .itemcontador{
@@ -37,5 +31,75 @@
 }
 
 .addcarrito{
-    margin-left: 20px;
+    margin-left: 10px;
 }
+
+.card{
+    margin: 10px;
+    padding: 10px;
+    height: auto;
+}
+
+.card-img-top{
+    height: 260px;
+}
+
+.card-body-propia{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card-text{
+    height: 40px;
+}
+
+
+.estilocard{
+    width: 100%;
+    height:auto;
+    padding: 20px;
+    
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+}
+
+.subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardsize{
+    width: 40%;
+    height: 40%;
+    margin-top: 9%;
+}
+
+.formcontainer{
+    margin: 40px 120px;
+    
+}
+
+.formcampo{
+    display: block;
+    width: 100%;
+    margin: 12px;  
+    background-color: rgb(240, 240, 240);
+    border-color: rgb(201, 201, 201);
+    border-style: groove;
+    border-radius: 5px; /* Ajusta este valor para cambiar el nivel de redondez */
+    padding: 10px; /* Agrega relleno para que el contenido no esté pegado al borde */
+    border: 1px solid #ccc; /* Agrega un borde para resaltar el área de la caja de entrada */
+  }
+
+  .formsubmit{
+    margin-left: 10px;
+  }
+
+
+

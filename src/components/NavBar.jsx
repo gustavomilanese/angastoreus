@@ -16,19 +16,19 @@ function NavBar() {
           <Nav className="me-auto">
             
             <Nav.Link>
-              <Link to={`/category/${`cat1`}`} className="noUnderline">
-                Set 2 pieces
+              <Link to={`/category/${`conjunto`}`} className="noUnderline">
+                Set
               </Link>
             </Nav.Link>
             
             <Nav.Link>
-              <Link to={`/category/${`cat2`}`} className="noUnderline">
+              <Link to={`/category/${`top`}`} className="noUnderline">
                 Top
               </Link>
             </Nav.Link>
 
             <Nav.Link>
-              <Link to={`/category/${`cat3`}`} className="noUnderline">
+              <Link to={`/category/${`short`}`} className="noUnderline">
                 Short
               </Link>
             </Nav.Link>
