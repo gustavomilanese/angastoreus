@@ -5,6 +5,8 @@ import CartWidget from './CartWidget';
 import React, { useContext } from "react";
 import { CartContext } from "../context/ShoppingCartContext"
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const ItemCount = ({producto}) => {
@@ -13,7 +15,9 @@ const ItemCount = ({producto}) => {
     const [contador, setContador] = useState(1)
     const [contadorWidget, setContadorWidget] = useState(0)
 
-    console.log(producto.id)
+    const notify = () => {
+        toast.success('¡Item have already added to the cart!');
+      };
 
     const sumar = () => {
         if (contador < producto.stock) {
@@ -41,6 +45,7 @@ const ItemCount = ({producto}) => {
                 );
                 setCartItems(nuevosItems);
                 setContadorWidget (cantidadNueva);
+                toast.success('¡Item have already added to the cart!');
             } else {
                 alert("No hay suficiente stock para agregar más de este producto.");
             }
@@ -65,6 +70,7 @@ const ItemCount = ({producto}) => {
             <span className="px-4">{contador}</span>
             <button className="btn btn-outline-primary ml-2" onClick={sumar}>+</button>
             <button className="btn btn-primary addcarrito" onClick={addToCart}>Add to Cart</button>
+            <ToastContainer/>
             <Link to={"/"} className="noUnderline">
             <button className="btn btn-primary addcarrito">Catalog</button>
             </Link>

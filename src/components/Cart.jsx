@@ -6,6 +6,7 @@ import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 
+
 const Cart = () => {
   const {cartItems,setCartItems} = useContext(CartContext);
   const {totalItemsInCart} = useContext(CartContext);                     

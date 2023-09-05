@@ -3,17 +3,26 @@ import { useState } from "react"
 import { useContext } from 'react';
 import { CartContext } from '../context/ShoppingCartContext';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
- 
+
+
 
 const SendOrder = () => {
     const [name, setName] = useState ("")
     const [email, setEmail] = useState ("")
     const [orderId,setOrderId] = useState (null)
-    const {cartItems,setCartItems} = useContext(CartContext);
+    const {cartItems,setCartItems} = useContext(CartContext)
+    const navigate = useNavigate();
+
 
     const db = getFirestore ()
+
+    const redirectToHome = () => {
+        history.push("/")
+     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -21,7 +30,13 @@ const SendOrder = () => {
         setOrderId (id))
         sendOrder()
         setCartItems ([])
+        toast.success('Your order is confirmed!', {
+            onClose: () => {
+                navigate("/");
+            },
+        });
     }
+
 
     const order = {
         name,
@@ -43,17 +58,19 @@ const SendOrder = () => {
 
 
   return (
-    <div>
-        <form className="formcontainer" onSubmit={handleSubmit}>
-            <input type="text" className="formcampo" placeholder="Name and Surname"
-            onChange={(e)=>setName (e.target.value)}/>
-            
-            <input type="text" className="formcampo" placeholder="email account"
-            onChange={(e)=>setEmail (e.target.value)}/>
-
-            <Button variant="primary" className="formsubmit" type="submit">Submit</Button>
-        </form>
-    </div>
+    <>
+        <div>
+            <form className="formcontainer" onSubmit={handleSubmit}>
+                <input type="text" className="formcampo" placeholder="Name and Surname"
+                onChange={(e)=>setName (e.target.value)}/>
+                
+                <input type="text" className="formcampo" placeholder="email account"
+                onChange={(e)=>setEmail (e.target.value)}/>
+                    <Button variant="primary" className="formsubmit" type="submit">Submit</Button>
+                    <ToastContainer/>
+            </form>
+        </div>
+    </>
   )
 }
 

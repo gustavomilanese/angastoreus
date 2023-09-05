@@ -9,8 +9,6 @@ import ItemCount from './components/ItemCount';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import Cart from './components/Cart';
 import ShoppingCartContext from './context/ShoppingCartContext';
-import Collection from './components/Collection';
-import Document from './components/Document';
 import SendOrder from './components/SendOrder';
 
 
@@ -28,8 +26,6 @@ const App = () => {
           <Route exact path = "/checkout" element = {<SendOrder/>}/>
         </Routes>
         <Footer/>
-        {/* <Document/> */}
-        {/* <Collection/> */}
       </ShoppingCartContext>
     </BrowserRouter>
     
